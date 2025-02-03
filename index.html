@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+  <title>Mind Maze - Heart Memory Challenge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mind Maze: Heart Memory Challenge</h1>
+    <p class="subtitle">Remember the sequence of colors and click them in the correct order!</p>
+    <div id="difficulty">
+      <label for="difficulty-select">Choose Difficulty:</label>
+      <select id="difficulty-select">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+    <div id="game-board">
+      <!-- Heart-shaped grid -->
+      <div class="color-box" data-color="red" style="grid-area: 1 / 2;"></div>
+      <div class="color-box" data-color="green" style="grid-area: 2 / 1;"></div>
+      <div class="color-box" data-color="blue" style="grid-area: 2 / 2;"></div>
+      <div class="color-box" data-color="yellow" style="grid-area: 2 / 3;"></div>
+      <div class="color-box" data-color="pink" style="grid-area: 3 / 1;"></div>
+      <div class="color-box" data-color="purple" style="grid-area: 3 / 3;"></div>
+    </div>
+    <div class="controls">
+      <button id="start-btn">Start Game</button>
+    </div>
+    <div class="stats">
+      <p id="level">Level: 1</p>
+      <p id="timer">Time Left: <span id="time-left">10</span>s</p>
+      <p id="score">Score: <span id="current-score">0</span></p>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="game-over-modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modal-title">Game Over!</h2>
+      <p id="modal-message">You reached level <span id="final-level"></span> with a score of <span id="final-score"></span>.</p>
+      <button id="restart-btn">Restart Game</button>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="correct-sound" src="correct.mp3"></audio>
+  <audio id="incorrect-sound" src="incorrect.mp3"></audio>
+  <audio id="level-up-sound" src="level-up.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
